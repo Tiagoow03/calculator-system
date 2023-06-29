@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Visor extends StatelessWidget {
-  const Visor({super.key, required this.texto});
+  const Visor({
+    super.key,
+    required this.texto,
+  });
 
   final String texto;
 
