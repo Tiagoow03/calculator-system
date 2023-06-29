@@ -1,3 +1,4 @@
+import 'package:calculator/interfaces/widgets/teclado.dart';
 import 'package:calculator/interfaces/widgets/visor.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        Visor(texto: '123.45'),
-        Text('Botoes'),
+        Visor(texto: '123.456'),
+        Teclado(),
       ],
     );
   }

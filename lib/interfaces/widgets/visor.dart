@@ -17,15 +17,18 @@ class Visor extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                texto,
-                maxLines: 1,
-                textAlign: TextAlign.end,
-                style: const TextStyle(
-                  decoration: TextDecoration.none,
-                  fontWeight: FontWeight.w100,
-                  fontSize: 80,
-                  color: Colors.white,
+              child: FittedBox(
+                alignment: Alignment.bottomRight,
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  texto,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    decoration: TextDecoration.none,
+                    fontWeight: FontWeight.w100,
+                    fontSize: 60,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
