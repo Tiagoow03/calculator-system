@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Visor extends StatelessWidget {
@@ -18,10 +17,8 @@ class Visor extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: AutoSizeText(
+              child: Text(
                 texto,
-                minFontSize: 20,
-                maxFontSize: 80,
                 maxLines: 1,
                 textAlign: TextAlign.end,
                 style: const TextStyle(
