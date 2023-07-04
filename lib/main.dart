@@ -10,9 +10,16 @@ class Calculadora extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xFF707070), //default
+          secondary: const Color(0xFFFA9E0D), //operation
+          inversePrimary: const Color(0xFF525252), //dark
+        ),
+      ),
     );
   }
 }

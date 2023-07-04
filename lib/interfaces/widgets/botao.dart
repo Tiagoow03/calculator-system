@@ -16,13 +16,15 @@ class Botao extends StatelessWidget {
       flex: grande ? 2 : 1,
       child: ElevatedButton(
         onPressed: () {},
-        child: Text(
-          texto,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 32,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Theme.of(context).colorScheme.secondary,
+          textStyle: const TextStyle(
+            fontSize: 24,
             fontWeight: FontWeight.w200,
           ),
+        ),
+        child: Text(
+          texto,
         ),
       ),
     );
