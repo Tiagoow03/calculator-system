@@ -4,24 +4,16 @@ class Botao extends StatelessWidget {
   const Botao({
     super.key,
     required this.texto,
-  });
-
-  const Botao.grande({
-    super.key,
-    required this.texto,
-  });
-
-  const Botao.operacao({
-    super.key,
-    required this.texto,
+    this.grande = false,
   });
 
   final String texto;
+  final bool grande;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 1,
+      flex: grande ? 2 : 1,
       child: ElevatedButton(
         onPressed: () {},
         child: Text(

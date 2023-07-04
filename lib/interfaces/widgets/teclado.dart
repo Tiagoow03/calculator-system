@@ -11,36 +11,35 @@ class Teclado extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 500,
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           BotaoEmLinhas(botoes: [
-            Botao(texto: 'C'),
-            Botao(texto: '+/-'),
+            Botao(texto: 'C', grande: true,),
             Botao(texto: '%'),
-            Botao.operacao(texto: '÷'),
+            Botao(texto: '÷'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '7'),
             Botao(texto: '8'),
             Botao(texto: '9'),
-            Botao.operacao(texto: 'x'),
+            Botao(texto: 'x'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '4'),
             Botao(texto: '5'),
             Botao(texto: '6'),
-            Botao.operacao(texto: '-'),
+            Botao(texto: '-'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '1'),
             Botao(texto: '2'),
             Botao(texto: '3'),
-            Botao.operacao(texto: '+'),
+            Botao(texto: '+'),
           ]),
           BotaoEmLinhas(botoes: [
-            Botao.grande(texto: '0'),
+            Botao(texto: '0', grande: true,),
             Botao(texto: ','),
-            Botao.operacao(texto: '='),
+            Botao(texto: '='),
           ]),
         ],
       ),
