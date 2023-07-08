@@ -13,13 +13,13 @@ class Visor extends StatelessWidget {
     return Expanded(
       flex: 1,
       child: Container(
-        decoration: const BoxDecoration(color: Color.fromRGBO(48, 48, 48, 1)),
+        decoration: const BoxDecoration(color: Color(0xFF17171C)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 8, right: 8),
               child: FittedBox(
                 alignment: Alignment.bottomRight,
                 fit: BoxFit.scaleDown,
@@ -28,9 +28,10 @@ class Visor extends StatelessWidget {
                   maxLines: 1,
                   style: const TextStyle(
                     decoration: TextDecoration.none,
-                    fontWeight: FontWeight.w100,
-                    fontSize: 60,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 90,
                     color: Colors.white,
+                    fontFamily: 'WorkSans',
                   ),
                 ),
               ),

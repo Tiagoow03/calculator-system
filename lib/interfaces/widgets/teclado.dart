@@ -14,32 +14,32 @@ class Teclado extends StatelessWidget {
       child: const Column(
         children: [
           BotaoEmLinhas(botoes: [
-            Botao(texto: 'C', grande: true,),
-            Botao(texto: '%'),
-            Botao(texto: '÷'),
+            Botao.superior(texto: 'C', grande: true,),
+            Botao.superior(texto: '%'),
+            Botao.operacao(texto: '÷'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '7'),
             Botao(texto: '8'),
             Botao(texto: '9'),
-            Botao(texto: 'x'),
+            Botao.operacao(texto: 'x'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '4'),
             Botao(texto: '5'),
             Botao(texto: '6'),
-            Botao(texto: '-'),
+            Botao.operacao(texto: '-'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '1'),
             Botao(texto: '2'),
             Botao(texto: '3'),
-            Botao(texto: '+'),
+            Botao.operacao(texto: '+'),
           ]),
           BotaoEmLinhas(botoes: [
             Botao(texto: '0', grande: true,),
             Botao(texto: ','),
-            Botao(texto: '='),
+            Botao.operacao(texto: '='),
           ]),
         ],
       ),
