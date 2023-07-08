@@ -1,14 +1,11 @@
-import 'package:intl/intl.dart';
-
 class Memoria {
   static const operacoes = ['%', '÷', 'x', '-', '+', '='];
   String _valor = '0';
   final _memoriaNumeros = [0.0, 0.0];
   int _memoriaIndexNumeros = 0;
-  late String _operacao;
+  late String _operacao = '';
   bool _limparValor = false;
-  late String _ultimoComando;
-  final _formatador = NumberFormat.decimalPattern('pt_BR');
+  late String _ultimoComando = '';
 
   // Obtém o valor atual da memória (display)
   Future<void> comandoTecla(String comando) async {
@@ -68,15 +65,10 @@ class Memoria {
 
     final valorAtual = limparValor ? valorVazio : _valor;
     _valor = valorAtual + numero;
-
-    final valorSemVirgula = _valor.replaceAll('.', '');
-
-    final valorFormatado = _formatador.format(double.tryParse(valorSemVirgula) ?? 0);
-
-    _valor = valorFormatado.replaceAll('.', ',');
     _limparValor = false;
 
-    _memoriaNumeros[_memoriaIndexNumeros] = (double.tryParse(_valor) ?? 0);
+    _memoriaNumeros[_memoriaIndexNumeros] = double.tryParse(_valor) ?? 0;
+    print(_memoriaNumeros[_memoriaIndexNumeros]);
   }
 
   // Limpa a memória e o valor atual
@@ -98,6 +90,22 @@ class Memoria {
       case '+': return _memoriaNumeros[0] + _memoriaNumeros[1];
       default: return _memoriaNumeros[0];
     }
+  }
+
+  String textoMemoria() {
+    String visor = '';
+
+    if (_memoriaNumeros[0] != 0) {
+      visor = _memoriaNumeros[0].toString();
+      if (_operacao != '') {
+        visor += ' $_operacao';
+        if (_memoriaNumeros[1] != 0) {
+          visor += ' ${_memoriaNumeros[1]}';
+        }
+      }
+    }
+
+    return visor;
   }
 
   String get valor => _valor;

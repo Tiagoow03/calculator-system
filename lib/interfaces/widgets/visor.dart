@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class Visor extends StatelessWidget {
   const Visor({
     super.key,
-    required this.texto,
+    required this.textoPrincipal,
+    required this.textoMemoria,
   });
 
-  final String texto;
+  final String textoPrincipal;
+  final String textoMemoria;
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +20,14 @@ class Visor extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 8, right: 8),
-              child: FittedBox(
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: Container(
                 alignment: Alignment.bottomRight,
-                fit: BoxFit.scaleDown,
                 child: Text(
-                  '2 + 2',
+                  textoMemoria,
                   maxLines: 1,
-                  style: TextStyle(
+                  style: const TextStyle(
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.w300,
                     fontSize: 30,
@@ -42,7 +43,7 @@ class Visor extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  texto,
+                  textoPrincipal,
                   maxLines: 1,
                   style: const TextStyle(
                     decoration: TextDecoration.none,

@@ -27,7 +27,10 @@ class _HomePageState extends State<HomePage> {
       decoration: const BoxDecoration(color: Color(0xFF17171C)),
       child: Column(
         children: [
-          Visor(texto: memoria.valor),
+          Visor(
+            textoPrincipal: memoria.valor,
+            textoMemoria: memoria.textoMemoria(),
+          ),
           Align(
             alignment: Alignment.center,
             child: Container(
