@@ -6,6 +6,7 @@ class Botao extends StatelessWidget {
     required this.texto,
     this.grande = false,
     this.cor = const Color(0xFF2E2F38),
+    required this.aoPressionar,
   });
 
   const Botao.operacao({
@@ -13,6 +14,7 @@ class Botao extends StatelessWidget {
     required this.texto,
     this.grande = false,
     this.cor = const Color(0xFF4B5EFC),
+    required this.aoPressionar,
   });
 
   const Botao.superior({
@@ -20,12 +22,14 @@ class Botao extends StatelessWidget {
     required this.texto,
     this.grande = false,
     this.cor = const Color(0xFF4E505F),
+    required this.aoPressionar,
   });
 
 
   final String texto;
   final bool grande;
   final Color cor;
+  final void Function(String) aoPressionar;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,7 @@ class Botao extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => aoPressionar(texto),
           style: ElevatedButton.styleFrom(
             backgroundColor: cor,
             textStyle: const TextStyle(

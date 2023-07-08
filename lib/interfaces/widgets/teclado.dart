@@ -5,41 +5,100 @@ import 'package:flutter/material.dart';
 class Teclado extends StatelessWidget {
   const Teclado({
     super.key,
+    required this.aoPressionar,
   });
+
+  final void Function(String) aoPressionar;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 500,
-      child: const Column(
+      child: Column(
         children: [
           BotaoEmLinhas(botoes: [
-            Botao.superior(texto: 'C', grande: true,),
-            Botao.superior(texto: '%'),
-            Botao.operacao(texto: '÷'),
+            Botao.superior(
+              texto: 'AC',
+              grande: true,
+              aoPressionar: aoPressionar,
+            ),
+            Botao.superior(
+              texto: '%',
+              aoPressionar: aoPressionar,
+            ),
+            Botao.operacao(
+              texto: '÷',
+              aoPressionar: aoPressionar,
+            ),
           ]),
           BotaoEmLinhas(botoes: [
-            Botao(texto: '7'),
-            Botao(texto: '8'),
-            Botao(texto: '9'),
-            Botao.operacao(texto: 'x'),
+            Botao(
+              texto: '7',
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: '8',
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: '9',
+              aoPressionar: aoPressionar,
+            ),
+            Botao.operacao(
+              texto: 'x',
+              aoPressionar: aoPressionar,
+            ),
           ]),
           BotaoEmLinhas(botoes: [
-            Botao(texto: '4'),
-            Botao(texto: '5'),
-            Botao(texto: '6'),
-            Botao.operacao(texto: '-'),
+            Botao(
+              texto: '4',
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: '5',
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: '6',
+              aoPressionar: aoPressionar,
+            ),
+            Botao.operacao(
+              texto: '-',
+              aoPressionar: aoPressionar,
+            ),
           ]),
           BotaoEmLinhas(botoes: [
-            Botao(texto: '1'),
-            Botao(texto: '2'),
-            Botao(texto: '3'),
-            Botao.operacao(texto: '+'),
+            Botao(
+              texto: '1',
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: '2',
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: '3',
+              aoPressionar: aoPressionar,
+            ),
+            Botao.operacao(
+              texto: '+',
+              aoPressionar: aoPressionar,
+            ),
           ]),
           BotaoEmLinhas(botoes: [
-            Botao(texto: '0', grande: true,),
-            Botao(texto: ','),
-            Botao.operacao(texto: '='),
+            Botao(
+              texto: '0',
+              grande: true,
+              aoPressionar: aoPressionar,
+            ),
+            Botao(
+              texto: ',',
+              aoPressionar: aoPressionar,
+            ),
+            Botao.operacao(
+              texto: '=',
+              aoPressionar: aoPressionar,
+            ),
           ]),
         ],
       ),

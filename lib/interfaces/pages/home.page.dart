@@ -1,3 +1,4 @@
+import 'package:calculator/application/domain/memoria.dart';
 import 'package:calculator/interfaces/widgets/teclado.dart';
 import 'package:calculator/interfaces/widgets/visor.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final Memoria memoria = Memoria();
+
+  _aoPressionar(String comando) {
+    setState(() {
+      memoria.comandoTecla(comando);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(color: Color(0xFF17171C)),
       child: Column(
         children: [
-          const Visor(texto: '1,258.2'),
+          Visor(texto: memoria.valor),
           Align(
             alignment: Alignment.center,
             child: Container(
@@ -36,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const Teclado(),
+          Teclado(aoPressionar: _aoPressionar),
         ],
       ),
     );
