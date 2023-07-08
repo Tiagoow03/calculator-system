@@ -18,6 +18,24 @@ class Visor extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 8, right: 8),
+              child: FittedBox(
+                alignment: Alignment.bottomRight,
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  '2 + 2',
+                  maxLines: 1,
+                  style: TextStyle(
+                    decoration: TextDecoration.none,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 30,
+                    color: Colors.grey,
+                    fontFamily: 'WorkSans',
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: FittedBox(

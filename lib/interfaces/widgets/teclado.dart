@@ -92,7 +92,7 @@ class Teclado extends StatelessWidget {
               aoPressionar: aoPressionar,
             ),
             Botao(
-              texto: ',',
+              texto: '.',
               aoPressionar: aoPressionar,
             ),
             Botao.operacao(
