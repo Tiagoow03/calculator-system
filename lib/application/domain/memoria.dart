@@ -68,7 +68,6 @@ class Memoria {
     _limparValor = false;
 
     _memoriaNumeros[_memoriaIndexNumeros] = double.tryParse(_valor) ?? 0;
-    print(_memoriaNumeros[_memoriaIndexNumeros]);
   }
 
   // Limpa a memória e o valor atual
@@ -96,17 +95,38 @@ class Memoria {
     String visor = '';
 
     if (_memoriaNumeros[0] != 0) {
-      visor = _memoriaNumeros[0].toString();
+      visor = formatarNumero(_memoriaNumeros[0]);
       if (_operacao != '') {
         visor += ' $_operacao';
         if (_memoriaNumeros[1] != 0) {
-          visor += ' ${_memoriaNumeros[1]}';
+          visor += ' ${formatarNumero(_memoriaNumeros[1])}';
         }
+      }
+    } else if (_memoriaNumeros[0] == 0 && _operacao != '') {
+      visor = '0 $_operacao';
+      if (_memoriaNumeros[1] != 0) {
+        visor += ' ${formatarNumero(_memoriaNumeros[1])}';
       }
     }
 
     return visor;
   }
 
-  String get valor => _valor;
+  String formatarNumero(double numero) {
+    String numeroFormatado = numero.toString();
+    List<String> partes = numeroFormatado.split('.');
+
+    String parteInteira = partes[0].replaceAllMapped(
+      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
+          (Match m) => '${m[1]},',
+    );
+
+    if (partes.length > 1 && partes[1] != '0') {
+      return '${parteInteira}.${partes[1]}';
+    } else {
+      return parteInteira;
+    }
+  }
+
+  String get valor => formatarNumero(double.tryParse(_valor) ?? 0);
 }
