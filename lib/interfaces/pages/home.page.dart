@@ -1,5 +1,6 @@
 import 'package:calculator/application/domain/memoria.dart';
 import 'package:calculator/interfaces/widgets/teclado.dart';
+import 'package:calculator/interfaces/widgets/theme_switch.dart';
 import 'package:calculator/interfaces/widgets/visor.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,13 @@ class _HomePageState extends State<HomePage> {
       decoration: const BoxDecoration(color: Color(0xFF17171C)),
       child: Column(
         children: [
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
+              child: ThemeSwitcherWidget(trocarTema: () {}),
+            ),
+          ),
           Visor(
             textoPrincipal: memoria.valor,
             textoMemoria: memoria.textoMemoria(),
