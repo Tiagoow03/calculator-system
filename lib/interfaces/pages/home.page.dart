@@ -28,12 +28,9 @@ class _HomePageState extends State<HomePage> {
       decoration: const BoxDecoration(color: Color(0xFF17171C)),
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
-              child: ThemeSwitcherWidget(trocarTema: () {}),
-            ),
+          Container(
+            padding: const EdgeInsets.only(top: 40, bottom: 20),
+            child: ThemeSwitcherWidget(trocarTema: () => setState(() {})),
           ),
           Visor(
             textoPrincipal: memoria.valor,
